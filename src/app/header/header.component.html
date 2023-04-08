@@ -1,0 +1,22 @@
+<div
+  class="flex flex-row justify-between items-center bg-gray-800 text-white p-4"
+>
+  <div>
+    <a routerLink="/">Feria Maipo Admin</a>
+  </div>
+  <div>
+    <div [hidden]="logged">
+      <a routerLink="/iniciar_sesion" class="text-white mr-4">Iniciar sesión</a>
+      <a routerLink="/registrate" class="text-white mr-4">Registrate</a>
+    </div>
+    <div [hidden]="!logged">
+      <a routerLink="/perfil" class="text-white mr-4">Perfil</a>
+      <button
+        class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+        (click)="logout()"
+      >
+        Cerrar sesión
+      </button>
+    </div>
+  </div>
+</div>

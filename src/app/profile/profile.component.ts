@@ -11,7 +11,7 @@ export class ProfileComponent {
 
   constructor(private route: ActivatedRoute) {
     this.route.data.subscribe(data => {
-      this.userData = data['userData'];
+      this.userData = data['user'];
     });
   }
 }

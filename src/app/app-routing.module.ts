@@ -3,12 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { AuthGuard } from './auth.guard';
+import { LoggedGuard } from './logged.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { UserResolver } from './user.resolver';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'iniciar_sesion', component: LoginFormComponent, canActivate: [AuthGuard] },
-  { path: 'registrate'  , component: SignupFormComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard]},
+  { path: 'iniciar_sesion', component: LoginFormComponent, canActivate: [LoggedGuard] },
+  { path: 'registrate'  , component: SignupFormComponent, canActivate: [LoggedGuard] },
   { path: 'perfil', component: ProfileComponent, resolve: {user: UserResolver} },
 ];
 

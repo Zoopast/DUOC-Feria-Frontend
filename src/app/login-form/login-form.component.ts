@@ -26,8 +26,8 @@ export class LoginFormComponent {
     this.formData.append('password', this.model.contrasena);
 
     this.userService.login(this.formData).subscribe((response: any) => {
-      console.log(response);
       this.cookieService.set('access_token', response.access_token);
+      window.location.href = '/';
     });
   }
 }

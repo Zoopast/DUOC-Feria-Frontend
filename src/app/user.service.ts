@@ -18,10 +18,15 @@ export class UserService {
   }
 
   getUserData() {
-    return this.http.get(`${this.baseUrl}/usuarios/me`);
+    const data = this.http.get(`${this.baseUrl}/usuarios/me`);
+    return data;
   }
 
   getAuthToken() {
     return this.cookieService.get('access_token');
+  }
+
+  isLoggedIn(){
+    return this.cookieService.check('access_token');
   }
 }

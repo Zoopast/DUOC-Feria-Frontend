@@ -10,13 +10,17 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     SignupFormComponent,
-    ProfileComponent
+    ProfileComponent,
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
