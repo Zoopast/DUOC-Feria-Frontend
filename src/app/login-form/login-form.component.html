@@ -1,0 +1,19 @@
+<div
+  [hidden]="submitted"
+>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <div
+      class="flex flex-col items-center justify-center"
+    >
+      <h2>Registro de usuario</h2>
+      <label for="email">Email</label>
+      <input type="email" id="email" #email="ngModel" name="username" class="form-control ng-untouched ng-pristine ng-valid px-2 border" [(ngModel)]="model.username" required />
+      <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Email es requerido</div>
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="contrasena" #rut="ngModel" class="form-control ng-untouched ng-pristine ng-valid px-2 border" [(ngModel)]="model.contrasena" required />
+      <div [hidden]="rut.valid || rut.pristine" class="alert alert-danger">Contraseña es requerido</div>
+    
+      <button type="submit" class="rounded-sm border p-2 bg-green-400 text-white m-2" [disabled]="!userForm.form.valid">Iniciar sesión</button>
+    </div>
+  </form>
+</div>
