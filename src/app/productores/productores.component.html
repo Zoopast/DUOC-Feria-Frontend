@@ -4,12 +4,12 @@
   <div
     class="flex flex-row"
   >
-    <button
+    <a routerLink="/productores/nuevo"
       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       (click)="nuevoProductor()"
     >
       Nuevo productor
-    </button>
+    </a>
   </div>
   <div>
     <table class="table-auto">
@@ -35,7 +35,7 @@
             </button>
             <button
               class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-              (click)="eliminarProductor(productor)"
+              (click)="eliminarProductor(productor.id_productor)"
             >
               Eliminar
             </button>

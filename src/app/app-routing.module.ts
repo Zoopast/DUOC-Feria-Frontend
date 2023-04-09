@@ -10,7 +10,12 @@ import { UserResolver } from './user.resolver';
 import { ProductoresResolver } from './productores.resolver';
 
 import { HomeComponent } from './home/home.component';
+
 import { ProductoresComponent } from './productores/productores.component';
+import { ProductorFormComponent } from './productor-form/productor-form.component';
+
+import { UsuariosComponent } from './usuarios/usuarios.component';
+
 import { ClientesComponent } from './clientes/clientes.component';
 import { ComerciantesComponent } from './comerciantes/comerciantes.component';
 
@@ -20,6 +25,8 @@ const routes: Routes = [
   { path: 'registrate'  , component: SignupFormComponent, canActivate: [LoggedGuard] },
   { path: 'perfil', component: ProfileComponent, resolve: {user: UserResolver} },
   { path: 'productores', component: ProductoresComponent, resolve: { productores: ProductoresResolver }},
+  { path: 'productores/nuevo', component: ProductorFormComponent },
+  { path: 'usuarios', component: UsuariosComponent },
   { path: 'clientes', component: ClientesComponent },
   { path: 'comerciantes', component: ComerciantesComponent }
 ];

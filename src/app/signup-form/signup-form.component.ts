@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Usuario } from '../usuario';
 import { UserService } from '../user.service';
-
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-signup-form',
   templateUrl: './signup-form.component.html',
@@ -14,12 +14,13 @@ export class SignupFormComponent {
   model = new Usuario('','','','', '', '');
   submitted = false;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private cookieService: CookieService) {}
 
   onSubmit() { 
     this.submitted = true;
     this.userService.signup(this.model).subscribe((response: any) => {
-      localStorage.setItem('token', response.token);
+      this.cookieService.set('access_token', response.access_token);
+      window.location.href = '/';
     });
   }
 

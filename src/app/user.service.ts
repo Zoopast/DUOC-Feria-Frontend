@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { environment } from '../environments/environment';
+import { Usuario } from './usuario';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,5 +30,13 @@ export class UserService {
 
   isLoggedIn(){
     return this.cookieService.check('access_token');
+  }
+
+  createUser(user: Usuario) {
+    return this.http.post(`${this.baseUrl}/usuarios`, user);
+  }
+
+  getUser(id_usuario: number){
+    return this.http.get(`${this.baseUrl}/usuarios/${id_usuario}`);
   }
 }
