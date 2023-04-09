@@ -12,6 +12,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { ProductoresComponent } from './productores/productores.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ComerciantesComponent } from './comerciantes/comerciantes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { HomeComponent } from './home/home.component';
     SignupFormComponent,
     ProfileComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ProductoresComponent,
+    ClientesComponent,
+    ComerciantesComponent
   ],
   imports: [
     BrowserModule,

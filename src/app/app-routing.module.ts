@@ -5,14 +5,23 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { AuthGuard } from './auth.guard';
 import { LoggedGuard } from './logged.guard';
 import { ProfileComponent } from './profile/profile.component';
+
 import { UserResolver } from './user.resolver';
+import { ProductoresResolver } from './productores.resolver';
+
 import { HomeComponent } from './home/home.component';
+import { ProductoresComponent } from './productores/productores.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ComerciantesComponent } from './comerciantes/comerciantes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'iniciar_sesion', component: LoginFormComponent, canActivate: [LoggedGuard] },
   { path: 'registrate'  , component: SignupFormComponent, canActivate: [LoggedGuard] },
   { path: 'perfil', component: ProfileComponent, resolve: {user: UserResolver} },
+  { path: 'productores', component: ProductoresComponent, resolve: { productores: ProductoresResolver }},
+  { path: 'clientes', component: ClientesComponent },
+  { path: 'comerciantes', component: ComerciantesComponent }
 ];
 
 @NgModule({
