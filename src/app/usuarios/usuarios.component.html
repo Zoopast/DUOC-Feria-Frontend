@@ -1,1 +1,47 @@
-<p>usuarios works!</p>
+<div
+  class="flex flex-col items-center justify-center" 
+>
+  <div
+    class="flex flex-row"
+  >
+    <a routerLink="/usuarios/nuevo"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Nuevo usuario
+    </a>
+  </div>
+  <h1>Usuarios</h1>
+  <div>
+    <table class="table-auto">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">Nombre</th>
+          <th class="px-4 py-2">Email</th>
+          <th class="px-4 py-2">RUT</th>
+          <th class="px-4 py-2">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td class="border px-4 py-2">{{ usuario.nombre_usuario + ' ' + usuario.apellidos_usuario  }}</td>
+          <td class="border px-4 py-2">{{ usuario.email }}</td>
+          <td class="border px-4 py-2">{{ usuario.rut }}</td>
+          <td class="border px-4 py-2">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              (click)="editarUsuario()"
+            >
+              Editar
+            </button>
+            <button
+              class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              (click)="eliminarUsuario(usuario.id_usuario)"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

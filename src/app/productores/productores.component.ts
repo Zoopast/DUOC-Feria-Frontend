@@ -17,6 +17,7 @@ export class ProductoresComponent {
         const new_productor = new Productor(productor[0], productor[1], productor[2], productor[3], productor[4], productor[5]);
         this.productoresData.push(new_productor);
       });
+      
     });
   }
 

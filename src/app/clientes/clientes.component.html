@@ -1,1 +1,47 @@
-<p>clientes works!</p>
+<div
+  class="flex flex-col items-center justify-center" 
+>
+  <div
+    class="flex flex-row"
+  >
+    <a routerLink="/clientes/nuevo"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Nuevo cliente
+    </a>
+  </div>
+  <h1>Clientes</h1>
+  <div>
+    <table class="table-auto">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">Nombre</th>
+          <th class="px-4 py-2">Email</th>
+          <th class="px-4 py-2">Teléfono</th>
+          <th class="px-4 py-2">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td class="border px-4 py-2">{{ cliente.nombre }}</td>
+          <td class="border px-4 py-2">{{ cliente.email }}</td>
+          <td class="border px-4 py-2">{{ cliente.telefono }}</td>
+          <td class="border px-4 py-2">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              (click)="editarCliente(cliente)"
+            >
+              Editar
+            </button>
+            <button
+              class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              (click)="eliminarCliente(cliente.id_cliente)"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

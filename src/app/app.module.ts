@@ -17,6 +17,9 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { ComerciantesComponent } from './comerciantes/comerciantes.component';
 import { ProductorFormComponent } from './productor-form/productor-form.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { NuevoUsuarioFormComponent } from './nuevo-usuario-form/nuevo-usuario-form.component';
+import { NuevoComercianteFormComponent } from './nuevo-comerciante-form/nuevo-comerciante-form.component';
+import { NuevoClienteFormComponent } from './nuevo-cliente-form/nuevo-cliente-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     ClientesComponent,
     ComerciantesComponent,
     ProductorFormComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    NuevoUsuarioFormComponent,
+    NuevoComercianteFormComponent,
+    NuevoClienteFormComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@ export class ProductorService {
   constructor(private http: HttpClient) { }
 
   getProductores() {
-    return this.http.get(`${this.baseUrl}/productores`);
+    return this.http.get(`${this.baseUrl}/productores/`);
   }
 
   getProductor(id_productor: number) {
@@ -19,7 +19,7 @@ export class ProductorService {
   }
 
   createProductor(productor: any) {
-    return this.http.post(`${this.baseUrl}/productores`, productor);
+    return this.http.post(`${this.baseUrl}/productores/`, productor);
   }
 
   updateProductor(productor: any) {

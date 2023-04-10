@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Usuario } from '../usuario';
 import { UserService } from '../user.service';
 import { ProductorService } from '../productor.service';
-import { APP_BASE_HREF } from '@angular/common';
 @Component({
   selector: 'app-productor-form',
   templateUrl: './productor-form.component.html',
@@ -20,7 +19,7 @@ export class ProductorFormComponent {
     id_usuario: 0
   }
 
-  usuario = new Usuario('','','Productor','', '', '');
+  usuario = new Usuario(0, '  ','','Productor','', '', '');
   submitted= false;
   onSubmit() { 
     this.submitted = true;
